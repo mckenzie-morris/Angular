@@ -1,0 +1,50 @@
+
+=======================DIFFERENCES BETWEEN REACT AND ANGULAR=======================
+
+1. Type
+React: A library for building user interfaces.
+Angular: A full-fledged framework with built-in features for routing, HTTP, forms, etc.
+
+2. Language
+React: Uses JavaScript, often with JSX (JavaScript + XML-like syntax).
+Angular: Uses TypeScript, a statically-typed superset of JavaScript.
+
+3. Architecture
+React: Purely component-based.
+Angular: Component-based, but includes services, modules, and dependency injection.
+
+4. Learning Curve
+React: Easier to get started with, but more decisions left up to the developer.
+Angular: Steeper learning curve due to more built-in concepts and conventions.
+
+5. Data Binding
+React: Primarily one-way data binding (from state to view).
+Angular: Supports two-way data binding (view and model stay in sync).
+
+6. DOM Handling
+React: Uses a Virtual DOM to optimize rendering.
+Angular: Uses the real DOM, with change detection mechanisms.
+
+7. Flexibility
+React: Very flexible — you choose your own router, state manager, etc.
+Angular: More opinionated — encourages a specific architecture and tools.
+
+8. Use Case
+React: Ideal for building fast, interactive UIs — especially SPAs.
+Angular: Often used for large-scale enterprise applications.
+
+9. Community & Ecosystem
+React: Massive community, tons of third-party packages.
+Angular: Strong backing by Google, fewer third-party decisions to make thanks to built-in tools.
+
+=================================UPDATING STATE=================================
+
+-There are two options for updating state in Angular:
+
+  1. Relying on Zone.js & Angular's change detection mechanism
+    * works automatically
+  2. Using Signals to notify Angular about value changes & required UI updates
+    * requires usage of special 'signal' instructions & code
+    * 'signals' are objects that store a value (any type, including nested objects)
+    * introduced with Angular v16
+  

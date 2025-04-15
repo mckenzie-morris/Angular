@@ -1,1 +1,12 @@
-<p>user works!</p>
+<div>
+    <!-- 'onSelectUser' function defined in the class  -->
+  <button (click)="onSelectUser()">
+    <!-- [alt]="selectedUser.name" is an example of 'property binding' -->
+    <!-- 'imagePath' is a getter function available to this template from the class -->
+    <!-- if using Angular signal, to read from the signal 'selectedUser', must use
+     execution like 'selectedUser()' -->
+    <img [alt]="selectedUser.name" [src]="imagePath" />
+    <!-- below is an example of 'string interpolation' -->
+    <span>{{ selectedUser.name }}</span>
+  </button>
+</div>
