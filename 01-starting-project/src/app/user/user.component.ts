@@ -1,5 +1,5 @@
 // 'signal' and 'computed' only imported for commented-out examples below
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, Input } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
 
@@ -12,7 +12,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
 })
 export class UserComponent {
   // note: 'let' or 'const' keywords unnecessary
-  selectedUser = DUMMY_USERS[randomIndex]
+  // selectedUser = DUMMY_USERS[randomIndex]
   /* 
   to utilize Angular's signal to write the function above, would be:
 
@@ -23,7 +23,7 @@ export class UserComponent {
   get imagePath() {
     /* since the below computation is being made inside the class (as opposed to the
     template html file), the 'this' keyword must be used */
-    return 'assets/users/' + this.selectedUser.avatar
+    return 'assets/users/' + this.avatar
   }
     /* 
   to utilize Angular's signal to write the function above, would be:
@@ -32,8 +32,8 @@ export class UserComponent {
   */
 // note: 'function' keyword or arrow syntax unnecessary
   onSelectUser() {
-    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
-    this.selectedUser = DUMMY_USERS[randomIndex]
+    // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
+    // this.selectedUser = DUMMY_USERS[randomIndex]
   /* 
   to utilize Angular's signal to write the expression above, would be:
 
@@ -41,4 +41,10 @@ export class UserComponent {
 
   */
   }
+
+  /* the bang operator tells TypeScript not to worry that 'avatar' has not yet been
+  initialized  */
+  @Input() avatar!: string;
+  @Input() name!: string;
+
 }
