@@ -1,5 +1,5 @@
-// 'signal' and 'computed' only imported for commented-out examples below
-import { Component, signal, computed, Input } from '@angular/core';
+// 'signal', 'input', and 'computed' only imported for commented-out examples below
+import { Component, Input, signal, computed, input  } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
 
@@ -43,8 +43,19 @@ export class UserComponent {
   }
 
   /* the bang operator tells TypeScript not to worry that 'avatar' has not yet been
-  initialized  */
-  @Input() avatar!: string;
-  @Input() name!: string;
+  initialized (will be app component is rendered, though) */
+  @Input({required: true}) avatar!: string;
+  /* by setting the config option 'required' to 'true', if the (now) required property
+  is not included in the component, Angular will throw an error */
+  @Input({required: true}) name!: string;
+  /* below is an example of implementing the 'avatar' property as a signal (note
+  the absence of a decorator) */
+  // avatar = input()
 
+    /* adding angle brackets with a primitive data type tells TypeScript what type of
+    value will be eventually be received by the input */
+  // avatar = input<string>()
+
+  /* the signal may also be implemented as required */
+  // avatar = input.required<string>()
 }
