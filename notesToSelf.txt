@@ -47,4 +47,13 @@ Angular: Strong backing by Google, fewer third-party decisions to make thanks to
     * requires usage of special 'signal' instructions & code
     * 'signals' are objects that store a value (any type, including nested objects)
     * introduced with Angular v16
-  
+    * reading values from signals is done by executing them like:
+        <img [src]="imagePath()" />
+      as opposed
+
+===================================DECORATORS===================================
+
+@ symbol is used to denote decorators, which are special functions that add metadata 
+to classes, methods, properties, or parameters
+
+Come from TypeScript
